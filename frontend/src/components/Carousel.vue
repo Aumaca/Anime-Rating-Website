@@ -5,7 +5,7 @@ import img3 from '../assets/imgs/jujutsu.jpg';
 </script>
 
 <template>
-    <div class="d-block d-lg-none">
+    <div class="carousel-container col-12 overflow-hidden">
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" style="height: 500px;">
                 <div class="carousel-item active">
@@ -51,6 +51,10 @@ import img3 from '../assets/imgs/jujutsu.jpg';
 </template>
 
 <style scoped>
+.carousel-container {
+    border-bottom: 3px solid #198754;
+}
+
 .caption {
     background-color: rgba(0, 0, 0, 0.534);
 }

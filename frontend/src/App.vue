@@ -1,12 +1,14 @@
 <script lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
 
   components: {
-    Navbar
+    Navbar,
+    Footer,
   },
 
   data() {
@@ -65,6 +67,7 @@ export default {
     </div>
 
     <RouterView />
+    <Footer></Footer>
   </body>
 </template>
 

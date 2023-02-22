@@ -1,21 +1,17 @@
 <script lang="ts">
 export default {
-  
+  name: "Navbar",
+  data() {
+    return {
+      darkMode: localStorage.getItem('darkMode'),
+    }
+  },
+  methods: {
+    setDarkMode() {
+      this.$emit("setDarkMode");
+    },
+  },
 }
-
-/*
-  function setDarkMode() {
-  const darkMode = localStorage.getItem('darkMode');
-  if (darkMode === 'true') {
-    localStorage.setItem('darkMode', 'false');
-    document.documentElement.style.setProperty('--background-color', 'white');
-    document.documentElement.style.setProperty('--text-color', 'black');
-  } else {
-    localStorage.setItem('darkMode', 'true');
-    document.documentElement.style.setProperty('--background-color', '#121212');
-    document.documentElement.style.setProperty('--text-color', 'rgba(255, 255, 255, 0.911)');
-  }
-*/
 
 </script>
 
@@ -48,11 +44,12 @@ export default {
             <RouterLink to="/about" class="nav-link active">About</RouterLink>
           </li>
 
+          <!-- Dark Mode -->
           <li class="nav-link active d-flex gap-2">
             Dark Mode
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                @click="" />
+              <input :checked="darkMode === 'true'" class="form-check-input" type="checkbox" role="switch"
+                id="flexSwitchCheckDefault" @click="setDarkMode" />
             </div>
           </li>
         </ul>
@@ -73,12 +70,14 @@ export default {
 
 nav {
   width: 100%;
-  background-color: var(--background-color);
+  position: sticky;
+  top: 0;
   border-bottom: 3px solid #198754;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
 }
 
 .navbar-brand div {

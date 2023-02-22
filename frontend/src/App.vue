@@ -3,12 +3,27 @@ import { RouterLink, RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 
 export default {
-  name: 'app',
+  name: "App",
 
-  components: { Navbar },
+  components: {
+    Navbar
+  },
 
   data() {
-    return { top: 21 }
+    return {
+      darkMode: false,
+    }
+  },
+
+  computed: {
+    /* Check if the value of theme will be dark or light based in boolean value of darkMode */
+    theme() {
+      return this.darkMode ? "dark" : "light";
+    }
+  },
+
+  created() {
+    this.setInitialDarkMode();
   },
 
   methods: {
@@ -18,19 +33,31 @@ export default {
         behavior: "smooth",
       });
     },
-    handleCreate() {
-      console.log('component has been created.');
+
+    /* Set the initial darkMode value */
+    setInitialDarkMode() {
+      localStorage.getItem('darkMode') === 'true' ? this.darkMode = true : false;
+    },
+
+    /* Change the boolean value of darkMode and then set to client's localStorage */
+    setDarkMode() {
+      if (localStorage.getItem('darkMode') === 'true') {
+        localStorage.setItem('darkMode', 'false');
+        this.darkMode = false;
+      } else {
+        localStorage.setItem('darkMode', 'true');
+        this.darkMode = true;
+      }
     }
-  }
+  },
+
 }
 </script>
 
 <template>
-  <div class="app">
+  <body :data-bs-theme="theme">
     <!-- Navbar -->
-    <header>
-      <Navbar @vnode-mounted="handleCreate" />
-    </header>
+    <Navbar @setDarkMode="setDarkMode" />
 
     <!-- Dot that go back to top on click -->
     <div class="dot" @click="scrollToTop">
@@ -38,7 +65,7 @@ export default {
     </div>
 
     <RouterView />
-  </div>
+  </body>
 </template>
 
 <!-- style without 'scoped' to apply to all HTML -->
@@ -53,22 +80,8 @@ export default {
   font-family: 'Poppins', sans-serif;
 }
 
-:root {
-  --background-color: white;
-  --text-color: black;
-}
-
-.dark-mode {
-  --background-color: #121212;
-  --text-color: white;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
 .dot {
+  color: black;
   height: 50px;
   width: 50px;
   position: fixed;

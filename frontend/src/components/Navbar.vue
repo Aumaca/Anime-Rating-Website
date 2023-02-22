@@ -1,18 +1,7 @@
-<script lang="ts">
-export default {
-  name: "Navbar",
-  data() {
-    return {
-      darkMode: localStorage.getItem('darkMode'),
-    }
-  },
-  methods: {
-    setDarkMode() {
-      this.$emit("setDarkMode");
-    },
-  },
-}
-
+<script setup lang="ts">
+const darkMode: string | null = localStorage.getItem('darkMode');
+const emit = defineEmits(['setDarkMode']);
+const setDarkMode = () => emit('setDarkMode');
 </script>
 
 <template>

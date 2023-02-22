@@ -13,7 +13,7 @@ import kimetsuposter from '../assets/imgs/kimetsuposter.jpg';
 
     <div class="d-flex flex-column flex-md-row justify-content-center">
       <!-- Recents Ratings -->
-      <article class="m-3 mt-3">
+      <article class="m-3 mt-3 d-flex justify-content-center">
         <div class="list rounded bg-success p-1">
 
           <!-- List Header -->
@@ -73,7 +73,7 @@ import kimetsuposter from '../assets/imgs/kimetsuposter.jpg';
       </article>
 
       <!-- Popular Ratings -->
-      <article class="m-3 mt-3">
+      <article class="m-3 mt-3 d-flex justify-content-center">
         <div class="list rounded bg-success p-1">
 
           <!-- List Header -->
@@ -145,10 +145,7 @@ import kimetsuposter from '../assets/imgs/kimetsuposter.jpg';
 .card {
   max-width: 540px;
   max-height: 250px;
-}
-
-.card-image-container {
-  max-height: 250px;
+  overflow: hidden;
 }
 
 .card .card-title {

@@ -30,6 +30,10 @@ const setDarkMode = () => emit('setDarkMode');
           </li>
 
           <li class="nav-item">
+            <RouterLink to="/reviews" class="nav-link active">Reviews</RouterLink>
+          </li>
+
+          <li class="nav-item">
             <RouterLink to="/about" class="nav-link active">About</RouterLink>
           </li>
 

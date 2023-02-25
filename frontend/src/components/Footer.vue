@@ -23,8 +23,8 @@
         </div>
     </div>
 
-    <div class="container">
-        <footer class="pt-5 pb-2 mx-3">
+    <div class="footer mt-5">
+        <footer class="container pt-4 pb-2 mx-auto">
             <div class="row d-flex justify-content-between">
                 <div class="col-6 col-md-2 mb-3">
                     <h5>Section</h5>
@@ -63,7 +63,7 @@
 
             <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 my-3 border-top">
                 <p>&copy; {{ new Date().getFullYear() }} Anime Rating, Inc. All rights reserved.</p>
-                <ul class="list-unstyled d-flex">
+                <ul class="list-unstyled d-flex justify-content-center">
                     <li class="ms-3">
                         <a class="link-dark text-decoration-none" href="https://instagram.com">
                             <h5><i class="ri-instagram-line"></i></h5>
@@ -84,3 +84,9 @@
         </footer>
     </div>
 </template>
+
+<style scoped>
+.footer {
+    border-top: 3px solid #198754;
+}
+</style>

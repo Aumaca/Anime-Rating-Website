@@ -13,23 +13,23 @@ export default {
 
   data() {
     return {
-      darkMode: false,
+      darkMode: false as boolean,
     }
   },
 
   computed: {
     /* Check if the value of theme will be dark or light based in boolean value of darkMode */
-    theme() {
+    theme(): string {
       return this.darkMode ? "dark" : "light";
     }
   },
 
-  created() {
+  created(): void {
     this.setInitialDarkMode();
   },
 
   methods: {
-    scrollToTop() {
+    scrollToTop(): void {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -37,12 +37,12 @@ export default {
     },
 
     /* Set the initial darkMode value */
-    setInitialDarkMode() {
+    setInitialDarkMode(): void {
       localStorage.getItem('darkMode') === 'true' ? this.darkMode = true : false;
     },
 
     /* Change the boolean value of darkMode and then set to client's localStorage */
-    setDarkMode() {
+    setDarkMode(): void {
       if (localStorage.getItem('darkMode') === 'true') {
         localStorage.setItem('darkMode', 'false');
         this.darkMode = false;

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const darkMode: string | null = localStorage.getItem('darkMode');
-const emit = defineEmits(['setDarkMode']);
-const setDarkMode = () => emit('setDarkMode');
+const emit = defineEmits<{
+  (event: 'setDarkMode'): void,
+}>()
+const setDarkMode = (): void => emit('setDarkMode');
 </script>
 
 <template>

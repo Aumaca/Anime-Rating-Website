@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { defineComponent } from 'vue';
+
 const darkMode: string | null = localStorage.getItem('darkMode');
 const emit = defineEmits<{
   (event: 'setDarkMode'): void,
-}>()
+}>();
 const setDarkMode = (): void => emit('setDarkMode');
+const url: string = import.meta.env.BASE_URL;
 </script>
 
 <template>
@@ -11,7 +14,7 @@ const setDarkMode = (): void => emit('setDarkMode');
     <div class="container-fluid">
 
       <!-- Logo -->
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" :href="url">
         <div>
           Anime Rating
           <i class="ri-star-half-line ms-2"></i>

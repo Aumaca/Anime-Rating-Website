@@ -3,6 +3,10 @@ import Crunchyroll_logo from "../assets/imgs/logos/Crunchyroll_logo.png"
 import funimation_logo from "../assets/imgs/logos/funimation_logo.png"
 import Hulu_Logo from "../assets/imgs/logos/Hulu_Logo.png"
 import netflix_logo from "../assets/imgs/logos/netflix_logo.png"
+import { onMounted } from 'vue';
+onMounted((): void => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>

@@ -4,6 +4,10 @@ import kaguya3 from '../assets/imgs/kaguya3.png';
 import codegeassposter from '../assets/imgs/codegeassposter.jpg';
 import attackontitan from '../assets/imgs/attackontitan.jpg';
 import kimetsuposter from '../assets/imgs/kimetsuposter.jpg';
+import { onMounted } from 'vue';
+onMounted((): void => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>

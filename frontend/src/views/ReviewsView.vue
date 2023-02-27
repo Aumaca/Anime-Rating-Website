@@ -2,6 +2,7 @@
 import kaguya from '../assets/imgs/kaguya.png';
 import attackontitan from '../assets/imgs/attackontitan.jpg';
 import codegeassposter from '../assets/imgs/codegeassposter.jpg';
+import { onMounted } from 'vue';
 
 function activeTag(evt: MouseEvent): void {
     const element = evt.target as HTMLElement;
@@ -11,6 +12,10 @@ function activeTag(evt: MouseEvent): void {
     }
     element.classList.add("active");
 }
+
+onMounted((): void => {
+    window.scrollTo(0, 0);
+});
 </script>
 
 <template>
